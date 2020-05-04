@@ -15,6 +15,7 @@ builds:
 
 archives:
   - files:
+      - README.md
       - plugin.yaml
 
 changelog:
