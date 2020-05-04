@@ -8,9 +8,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/lrills/helm-unittest/unittest/snapshot"
+	"github.com/vbehar/helm3-unittest/unittest/snapshot"
 	"gopkg.in/yaml.v2"
-	"k8s.io/helm/pkg/proto/hapi/chart"
+	"helm.sh/helm/v3/pkg/chart"
 )
 
 // ParseTestSuiteFile parse a suite file at path and returns TestSuite
@@ -94,7 +94,7 @@ func (s *TestSuite) prepareChart(targetChart *chart.Chart) (*chart.Chart, error)
 		return copiedChart, nil
 	}
 
-	filteredTemplate := make([]*chart.Template, 0, len(s.Templates))
+	filteredTemplate := make([]*chart.File, 0, len(s.Templates))
 	// check templates and add them in chart dependencies, if from subchart leave it empty
 	if suiteIsFromRootChart {
 		for _, fileName := range s.Templates {

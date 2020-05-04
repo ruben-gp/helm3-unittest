@@ -1,9 +1,9 @@
-name: "unittest"
-version: "0.1.5"
-usage: "unittest for helm charts"
-description: "Unit test for helm chart in YAML with ease to keep your chart functional and robust."
+name: "unittest3"
+version: "1.0.0"
+usage: "unittest for helm 3 charts"
+description: "Unit test for helm 3 charts in YAML with ease to keep your chart functional and robust."
 ignoreFlags: false
-command: "$HELM_PLUGIN_DIR/untt"
+command: "$HELM_PLUGIN_DIR/bin/unittest3"
 hooks:
-  install: "$HELM_PLUGIN_DIR/install-binary.sh"
-  update: "$HELM_PLUGIN_DIR/install-binary.sh"
+  install: "cd $HELM_PLUGIN_DIR; ./install_plugin.sh"
+  update: "cd $HELM_PLUGIN_DIR; ./install_plugin.sh"

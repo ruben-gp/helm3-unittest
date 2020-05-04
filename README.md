@@ -1,13 +1,6 @@
-# helm unittest
+# Unit Test plugin for Helm 3
 
-Unit test for *helm chart* in YAML to keep your chart consistent and robust!
-
-Feature:
-  - write test file in pure YAML
-  - render locally with no need of *tiller*
-  - create **nothing** on your cluster
-  - [define values and release options](./DOCUMENT.md#test-job)
-  - [snapshot testing](#snapshot-testing)
+This is a fork of <https://github.com/lrills/helm-unittest> for Helm 3.
 
 ## Documentation
 
@@ -27,7 +20,7 @@ If you are ready for writing tests, check the [DOCUMENT](./DOCUMENT.md) for the 
 ## Install
 
 ```
-$ helm plugin install https://github.com/lrills/helm-unittest
+$ helm plugin install https://github.com/vbehar/helm3-unittest
 ```
 
 It will install the latest version of binary into helm plugin directory.
@@ -57,7 +50,7 @@ tests:
 and run:
 
 ```
-$ helm unittest $YOUR_CHART
+$ helm unittest3 $YOUR_CHART
 ```
 
 Now there is your first test! ;)  
@@ -67,14 +60,14 @@ Now there is your first test! ;)
 The test suite file is written in pure YAML, and default placed under the `tests/` directory of the chart with suffix `_test.yaml`. You can also have your own suite files arrangement with `-f, --file` option of cli set as the glob patterns of test suite files related to chart directory, like:
 
 ```bash
-$ helm unittest -f 'my-tests/*.yaml' -f 'more-tests/*.yaml' my-chart
+$ helm unittest3 -f 'my-tests/*.yaml' -f 'more-tests/*.yaml' my-chart
 ```
 Check [DOCUMENT](./DOCUMENT.md) for more details about writing tests.
 
 ## Usage
 
 ```
-$ helm unittest [flags] CHART [...]
+$ helm unittest3 [flags] CHART [...]
 ```
 
 This renders your charts locally (without tiller) and runs tests
@@ -114,7 +107,7 @@ tests:
 The `matchSnapshot` assertion validate the content rendered the same as cached last time. It fails if the content changed, and you should check and update the cache with `-u, --update-snapshot` option of cli.
 
 ```
-$ helm unittest -u my-chart
+$ helm unittest3 -u my-chart
 ```
 The cache files is stored as `__snapshot__/*_test.yaml.snap` at the directory your test file placed, you should add them in version control with your chart.
 

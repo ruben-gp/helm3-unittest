@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/lrills/helm-unittest/unittest/snapshot"
-	"k8s.io/helm/pkg/chartutil"
-	"k8s.io/helm/pkg/proto/hapi/chart"
+	"github.com/vbehar/helm3-unittest/unittest/snapshot"
+	"helm.sh/helm/v3/pkg/chart"
+	"helm.sh/helm/v3/pkg/chart/loader"
 )
 
 // testUnitCounting stores counting numbers of test unit status
@@ -62,7 +62,7 @@ func (tr *TestRunner) Run(ChartPaths []string) bool {
 	allPassed := true
 	start := time.Now()
 	for _, chartPath := range ChartPaths {
-		chart, err := chartutil.Load(chartPath)
+		chart, err := loader.Load(chartPath)
 		if err != nil {
 			tr.printErroredChartHeader(err)
 			tr.countChart(false, err)
@@ -116,7 +116,7 @@ func (tr *TestRunner) getTestSuites(chartPath, chartRoute string, chart *chart.C
 	}
 
 	if tr.Config.WithSubChart {
-		for _, subchart := range chart.Dependencies {
+		for _, subchart := range chart.Dependencies() {
 			subchartSuites, err := tr.getTestSuites(
 				filepath.Join(chartPath, "charts", subchart.Metadata.Name),
 				filepath.Join(chartRoute, "charts", subchart.Metadata.Name),

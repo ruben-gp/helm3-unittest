@@ -1,10 +1,9 @@
 _scratch
 tpl
-vendor/
 _dist/
-
-untt
-untt.exe
+dist/
+bin/
+helm3-unittest
 _dist
 
 .DS_Store
