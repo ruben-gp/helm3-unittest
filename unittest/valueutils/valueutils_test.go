@@ -3,8 +3,8 @@ package valueutils_test
 import (
 	"testing"
 
-	"github.com/lrills/helm-unittest/unittest/common"
-	. "github.com/lrills/helm-unittest/unittest/valueutils"
+	"github.com/vbehar/helm3-unittest/unittest/common"
+	. "github.com/vbehar/helm3-unittest/unittest/valueutils"
 	"github.com/stretchr/testify/assert"
 )
 

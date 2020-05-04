@@ -3,8 +3,8 @@ package validators
 import (
 	"reflect"
 
-	"github.com/lrills/helm-unittest/unittest/common"
-	"github.com/lrills/helm-unittest/unittest/valueutils"
+	"github.com/vbehar/helm3-unittest/unittest/common"
+	"github.com/vbehar/helm3-unittest/unittest/valueutils"
 )
 
 // IsEmptyValidator validate value of Path is empty

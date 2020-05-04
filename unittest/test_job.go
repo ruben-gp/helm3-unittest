@@ -8,15 +8,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/lrills/helm-unittest/unittest/common"
-	"github.com/lrills/helm-unittest/unittest/snapshot"
-	"github.com/lrills/helm-unittest/unittest/validators"
-	"github.com/lrills/helm-unittest/unittest/valueutils"
+	"github.com/vbehar/helm3-unittest/unittest/common"
+	"github.com/vbehar/helm3-unittest/unittest/snapshot"
+	"github.com/vbehar/helm3-unittest/unittest/validators"
+	"github.com/vbehar/helm3-unittest/unittest/valueutils"
 	yaml "gopkg.in/yaml.v2"
-	"k8s.io/helm/pkg/chartutil"
-	"k8s.io/helm/pkg/engine"
-	"k8s.io/helm/pkg/proto/hapi/chart"
-	"k8s.io/helm/pkg/timeconv"
+	"helm.sh/helm/v3/pkg/chart"
+	"helm.sh/helm/v3/pkg/chartutil"
+	"helm.sh/helm/v3/pkg/engine"
 )
 
 type orderedSnapshotComparer struct {
@@ -125,16 +124,18 @@ func (t *TestJob) getUserValues() ([]byte, error) {
 
 // render the chart and return result map
 func (t *TestJob) renderChart(targetChart *chart.Chart, userValues []byte) (map[string]string, error) {
-	config := &chart.Config{Raw: string(userValues), Values: map[string]*chart.Value{}}
+	values, err := chartutil.ReadValues(userValues)
+	if err != nil {
+		return nil, err
+	}
 	options := *t.releaseOption()
 
-	vals, err := chartutil.ToRenderValues(targetChart, config, options)
+	vals, err := chartutil.ToRenderValues(targetChart, values, options, chartutil.DefaultCapabilities)
 	if err != nil {
 		return nil, err
 	}
 
-	renderer := engine.New()
-	outputOfFiles, err := renderer.Render(targetChart, vals)
+	outputOfFiles, err := engine.Render(targetChart, vals)
 	if err != nil {
 		return nil, err
 	}
@@ -147,7 +148,6 @@ func (t *TestJob) releaseOption() *chartutil.ReleaseOptions {
 	options := chartutil.ReleaseOptions{
 		Name:      "RELEASE-NAME",
 		Namespace: "NAMESPACE",
-		Time:      timeconv.Now(),
 		Revision:  t.Release.Revision,
 		IsInstall: !t.Release.IsUpgrade,
 		IsUpgrade: t.Release.IsUpgrade,
