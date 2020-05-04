@@ -13,5 +13,9 @@ builds:
       - GO111MODULE=on
       - GOFLAGS=-mod=vendor
 
+archives:
+  - files:
+      - plugin.yaml
+
 changelog:
   sort: asc
