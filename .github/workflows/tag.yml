@@ -36,6 +36,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Tag
         uses: ./.github/actions/autotag/
+        with:
+          branch: "release/${{ steps.nextversion.outputs.version }}"
       - name: Push
         uses: ad-m/github-push-action@master
         with:
