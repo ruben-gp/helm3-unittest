@@ -7,7 +7,7 @@ if [ -n "${HELM_LINTER_PLUGIN_NO_INSTALL_HOOK}" ]; then
     exit 0
 fi
 
-version="$(git describe --tags --exact-match 2>/dev/null)"
+version="$(git describe --tags $(git rev-list --tags --max-count=1) 2>/dev/null)"
 if [ -n "$version" ]; then
     version="${version:1}"
 else
