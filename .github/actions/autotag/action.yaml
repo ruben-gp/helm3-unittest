@@ -9,15 +9,15 @@ inputs:
     description: 'Path to the repo'
     required: false
     default: './'
-  pre-release-name:
+  pre_release_name:
     description: 'create a pre-release tag with this name (can be: alpha|beta|pre|rc)'
     required: false
     default: ''
-  pre-release-timestamp:
+  pre_release_timestamp:
     description: 'create a pre-release tag and append a timestamp (can be: datetime|epoch)'
     required: false
     default: ''
-  dry-run:
+  dry_run:
     description: 'Just output the next version, don''t autotag'
     required: false
     default: ''

@@ -21,7 +21,7 @@ jobs:
         id: nextversion
         uses: ./.github/actions/autotag/
         with:
-          dry-run: true
+          dry_run: true
       - name: Update plugin.yaml version
         uses: mikefarah/yq@master
         with:
