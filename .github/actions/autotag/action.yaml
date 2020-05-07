@@ -1,0 +1,31 @@
+name: 'autotag'
+description: 'https://github.com/pantheon-systems/autotag'
+inputs:
+  branch:
+    description: 'Git branch to scan'
+    required: false
+    default: 'master'
+  repo:
+    description: 'Path to the repo'
+    required: false
+    default: './'
+  pre-release-name:
+    description: 'create a pre-release tag with this name (can be: alpha|beta|pre|rc)'
+    required: false
+    default: ''
+  pre-release-timestamp:
+    description: 'create a pre-release tag and append a timestamp (can be: datetime|epoch)'
+    required: false
+    default: ''
+  dry-run:
+    description: 'Just output the next version, don''t autotag'
+    required: false
+    default: ''
+outputs:
+  version:
+    description: 'The new version'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}

@@ -7,8 +7,12 @@ if [ -n "${HELM_LINTER_PLUGIN_NO_INSTALL_HOOK}" ]; then
     exit 0
 fi
 
-# shellcheck disable=SC2002
-version="$(cat plugin.yaml | grep "version" | cut -d '"' -f 2)"
+version="$(git describe --tags --exact-match 2>/dev/null)"
+if [ -n "$version" ]; then
+    version="${version:1}"
+else
+    version="$(cat plugin.yaml | grep "version" | cut -d '"' -f 2)"
+fi
 echo "Downloading and installing helm3-unittest v${version} ..."
 
 url=""
@@ -37,7 +41,7 @@ else
     wget -q "${url}" -O "releases/v${version}.tar.gz"
 fi
 tar xzf "releases/v${version}.tar.gz" -C "releases/v${version}"
-mv "releases/v${version}/helm3-unittest" "bin/unittest3" || \
-    mv "releases/v${version}/helm3-unittest.exe" "bin/unittest3"
+mv "releases/v${version}/helm3-unittest" "bin/unittest" || \
+    mv "releases/v${version}/helm3-unittest.exe" "bin/unittest"
 mv "releases/v${version}/plugin.yaml" .
 mv "releases/v${version}/README.md" .

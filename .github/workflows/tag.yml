@@ -17,10 +17,27 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
+      - name: Next Version
+        id: nextversion
+        uses: ./.github/actions/autotag/
+        with:
+          dry-run: true
+      - name: Update plugin.yaml version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq w -i plugin.yaml 'version' "${{ steps.nextversion.outputs.version }}"
+      - name: Commit
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: plugin.yaml
+          message: 'Release ${{ steps.nextversion.outputs.version }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Tag
         uses: ./.github/actions/autotag/
       - name: Push
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}
+          branch: "release/${{ steps.nextversion.outputs.version }}"
           tags: true

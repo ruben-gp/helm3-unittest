@@ -50,7 +50,7 @@ tests:
 and run:
 
 ```
-$ helm unittest3 $YOUR_CHART
+$ helm unittest $YOUR_CHART
 ```
 
 Now there is your first test! ;)  
@@ -60,14 +60,14 @@ Now there is your first test! ;)
 The test suite file is written in pure YAML, and default placed under the `tests/` directory of the chart with suffix `_test.yaml`. You can also have your own suite files arrangement with `-f, --file` option of cli set as the glob patterns of test suite files related to chart directory, like:
 
 ```bash
-$ helm unittest3 -f 'my-tests/*.yaml' -f 'more-tests/*.yaml' my-chart
+$ helm unittest -f 'my-tests/*.yaml' -f 'more-tests/*.yaml' my-chart
 ```
 Check [DOCUMENT](./DOCUMENT.md) for more details about writing tests.
 
 ## Usage
 
 ```
-$ helm unittest3 [flags] CHART [...]
+$ helm unittest [flags] CHART [...]
 ```
 
 This renders your charts locally (without tiller) and runs tests
@@ -107,7 +107,7 @@ tests:
 The `matchSnapshot` assertion validate the content rendered the same as cached last time. It fails if the content changed, and you should check and update the cache with `-u, --update-snapshot` option of cli.
 
 ```
-$ helm unittest3 -u my-chart
+$ helm unittest -u my-chart
 ```
 The cache files is stored as `__snapshot__/*_test.yaml.snap` at the directory your test file placed, you should add them in version control with your chart.
 
