@@ -31,6 +31,7 @@ jobs:
         with:
           add: plugin.yaml
           message: 'Release ${{ steps.nextversion.outputs.version }}'
+          ref: "release/${{ steps.nextversion.outputs.version }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Tag
