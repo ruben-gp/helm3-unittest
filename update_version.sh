@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # script used by goreleaser - see .goreleaser.yml
 
