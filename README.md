@@ -1,5 +1,8 @@
 # Unit Test plugin for Helm 3
 
+[![Release Status](https://github.com/vbehar/helm3-unittest/workflows/release/badge.svg)](https://github.com/vbehar/helm3-unittest/actions?query=workflow%3Arelease)
+[![Latest Release](https://img.shields.io/github/v/release/vbehar/helm3-unittest)](https://github.com/vbehar/helm3-unittest/releases)
+
 This is a fork of <https://github.com/lrills/helm-unittest> for Helm 3.
 
 ## Documentation
