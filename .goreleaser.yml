@@ -1,5 +1,9 @@
 # Configuration file for http://goreleaser.com
 
+before:
+  hooks:
+    - ./update_version.sh {{.Version}}
+
 builds:
   - goos:
       - linux
