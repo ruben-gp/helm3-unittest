@@ -7,3 +7,5 @@ helm3-unittest
 _dist
 
 .DS_Store
+
+plugin.yaml
