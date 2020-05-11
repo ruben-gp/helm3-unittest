@@ -8,4 +8,4 @@ _dist
 
 .DS_Store
 
-plugin.yaml
+helm-plugin.yaml

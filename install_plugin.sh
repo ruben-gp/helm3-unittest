@@ -38,5 +38,5 @@ fi
 tar xzf "releases/${version}.tar.gz" -C "releases/${version}"
 mv "releases/${version}/helm3-unittest" "bin/unittest" || \
     mv "releases/${version}/helm3-unittest.exe" "bin/unittest"
-mv "releases/${version}/plugin.yaml" .
+mv "releases/${version}/helm-plugin.yaml" plugin.yaml
 mv "releases/${version}/README.md" .

@@ -20,7 +20,7 @@ builds:
 archives:
   - files:
       - README.md
-      - plugin.yaml
+      - helm-plugin.yaml
 
 changelog:
   sort: asc
