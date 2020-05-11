@@ -2,7 +2,7 @@
 
 before:
   hooks:
-    - ./update_version.sh {{.Version}}
+    - ./update_version.sh
 
 builds:
   - goos:
