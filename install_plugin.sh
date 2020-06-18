@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 # borrowed from https://github.com/helm/helm-2to3/blob/master/scripts/install_plugin.sh
 
