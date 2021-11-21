@@ -5,8 +5,8 @@ import (
 
 	. "github.com/vbehar/helm3-unittest/unittest/validators"
 
-	"github.com/vbehar/helm3-unittest/unittest/common"
 	"github.com/stretchr/testify/assert"
+	"github.com/vbehar/helm3-unittest/unittest/common"
 )
 
 func TestIsKindValidatorWhenOk(t *testing.T) {
