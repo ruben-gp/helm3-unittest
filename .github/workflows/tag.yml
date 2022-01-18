@@ -9,18 +9,17 @@ on:
 
 jobs:
   tag:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      - uses: fregante/setup-git-user@v1
 
-      - name: Tag
-        uses: ./.github/actions/autotag/
-      - name: Push
-        uses: ad-m/github-push-action@master
+      - name: tag
+        uses: jenkins-x-plugins/jx-release-version@v2.4.13
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          tags: true
+          tag: true
+          github-token: ${{ secrets.GH_TOKEN }}
