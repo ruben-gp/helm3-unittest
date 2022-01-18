@@ -7,6 +7,7 @@ tests:
       - ./values/image.yaml
     set:
       service.internalPort: 8080
+      global.version: v2.0.0
     asserts:
       - equal:
           path: spec.template.spec.containers[0].image
@@ -44,3 +45,6 @@ tests:
           count: 1
       - matchSnapshot:
           path: spec
+      - equal:
+          path: metadata.annotations.version
+          value: v2.0.0

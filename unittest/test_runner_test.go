@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"github.com/bradleyjkemp/cupaloy"
-	. "github.com/vbehar/helm3-unittest/unittest"
 	"github.com/stretchr/testify/assert"
+	. "github.com/vbehar/helm3-unittest/unittest"
 )
 
 var sectionBeginPattern = regexp.MustCompile("( PASS | FAIL |\n*###|\n*Charts:|\n*Snapshot Summary:)")

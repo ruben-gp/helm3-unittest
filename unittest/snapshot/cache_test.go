@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	. "github.com/vbehar/helm3-unittest/unittest/snapshot"
 	"github.com/stretchr/testify/assert"
+	. "github.com/vbehar/helm3-unittest/unittest/snapshot"
 )
 
 var lastTimeContent = `cached before:

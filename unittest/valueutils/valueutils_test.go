@@ -3,9 +3,9 @@ package valueutils_test
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/vbehar/helm3-unittest/unittest/common"
 	. "github.com/vbehar/helm3-unittest/unittest/valueutils"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestGetValueOfSetPath(t *testing.T) {
