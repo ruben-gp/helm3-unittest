@@ -1,4 +1,4 @@
-module github.com/vbehar/helm3-unittest
+module github.com/ruben-gp/helm3-unittest
 
 go 1.14
 

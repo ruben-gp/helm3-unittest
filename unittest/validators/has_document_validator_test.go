@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vbehar/helm3-unittest/unittest/common"
-	. "github.com/vbehar/helm3-unittest/unittest/validators"
+	"github.com/ruben-gp/helm3-unittest/unittest/common"
+	. "github.com/ruben-gp/helm3-unittest/unittest/validators"
 )
 
 func TestHasDocumentsValidatorOk(t *testing.T) {

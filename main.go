@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/vbehar/helm3-unittest/unittest"
+	"github.com/ruben-gp/helm3-unittest/unittest"
 )
 
 func main() {

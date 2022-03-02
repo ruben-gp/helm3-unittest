@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/pmezard/go-difflib/difflib"
-	"github.com/vbehar/helm3-unittest/unittest/common"
-	"github.com/vbehar/helm3-unittest/unittest/snapshot"
+	"github.com/ruben-gp/helm3-unittest/unittest/common"
+	"github.com/ruben-gp/helm3-unittest/unittest/snapshot"
 )
 
 // SnapshotComparer provide CompareToSnapshot utility to validator

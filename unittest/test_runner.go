@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/vbehar/helm3-unittest/unittest/snapshot"
+	"github.com/ruben-gp/helm3-unittest/unittest/snapshot"
 	"helm.sh/helm/v3/pkg/chart"
 	"helm.sh/helm/v3/pkg/chart/loader"
 )

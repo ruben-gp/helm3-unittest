@@ -6,7 +6,7 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/vbehar/helm3-unittest/unittest/common"
+	"github.com/ruben-gp/helm3-unittest/unittest/common"
 )
 
 // GetValueOfSetPath get the value of the `--set` format path from a manifest

@@ -9,7 +9,7 @@ import (
 
 	"github.com/bradleyjkemp/cupaloy"
 	"github.com/stretchr/testify/assert"
-	. "github.com/vbehar/helm3-unittest/unittest"
+	. "github.com/ruben-gp/helm3-unittest/unittest"
 )
 
 var sectionBeginPattern = regexp.MustCompile("( PASS | FAIL |\n*###|\n*Charts:|\n*Snapshot Summary:)")

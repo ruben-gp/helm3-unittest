@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/vbehar/helm3-unittest/unittest/common"
-	"github.com/vbehar/helm3-unittest/unittest/snapshot"
-	. "github.com/vbehar/helm3-unittest/unittest/validators"
+	"github.com/ruben-gp/helm3-unittest/unittest/common"
+	"github.com/ruben-gp/helm3-unittest/unittest/snapshot"
+	. "github.com/ruben-gp/helm3-unittest/unittest/validators"
 )
 
 type mockSnapshotComparer struct {

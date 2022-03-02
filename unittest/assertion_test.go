@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	. "github.com/vbehar/helm3-unittest/unittest"
-	"github.com/vbehar/helm3-unittest/unittest/common"
-	"github.com/vbehar/helm3-unittest/unittest/snapshot"
+	. "github.com/ruben-gp/helm3-unittest/unittest"
+	"github.com/ruben-gp/helm3-unittest/unittest/common"
+	"github.com/ruben-gp/helm3-unittest/unittest/snapshot"
 	"gopkg.in/yaml.v2"
 )
 

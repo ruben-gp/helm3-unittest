@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/vbehar/helm3-unittest/unittest/snapshot"
+	"github.com/ruben-gp/helm3-unittest/unittest/snapshot"
 )
 
 // TestSuiteResult result return by TestSuite.Run

@@ -5,7 +5,9 @@ dist/
 bin/
 helm3-unittest
 _dist
+vendor/
 
 .DS_Store
+.vscode/
 
 helm-plugin.yaml

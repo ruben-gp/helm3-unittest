@@ -3,8 +3,8 @@ package validators
 import (
 	"strconv"
 
-	"github.com/vbehar/helm3-unittest/unittest/snapshot"
-	"github.com/vbehar/helm3-unittest/unittest/valueutils"
+	"github.com/ruben-gp/helm3-unittest/unittest/snapshot"
+	"github.com/ruben-gp/helm3-unittest/unittest/valueutils"
 )
 
 // MatchSnapshotValidator validate snapshot of value of Path the same as cached

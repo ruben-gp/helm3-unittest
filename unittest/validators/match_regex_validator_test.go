@@ -3,10 +3,10 @@ package validators_test
 import (
 	"testing"
 
-	. "github.com/vbehar/helm3-unittest/unittest/validators"
+	. "github.com/ruben-gp/helm3-unittest/unittest/validators"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vbehar/helm3-unittest/unittest/common"
+	"github.com/ruben-gp/helm3-unittest/unittest/common"
 )
 
 var docToTestMatchRegex = `

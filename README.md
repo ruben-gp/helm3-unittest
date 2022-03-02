@@ -1,9 +1,9 @@
 # Unit Test plugin for Helm 3
 
-[![Release Status](https://github.com/vbehar/helm3-unittest/workflows/release/badge.svg)](https://github.com/vbehar/helm3-unittest/actions?query=workflow%3Arelease)
-[![Latest Release](https://img.shields.io/github/v/release/vbehar/helm3-unittest)](https://github.com/vbehar/helm3-unittest/releases)
+<!-- [![Release Status](https://github.com/ruben-gp/helm3-unittest/workflows/release/badge.svg)](https://github.com/ruben-gp/helm3-unittest/actions?query=workflow%3Arelease)
+[![Latest Release](https://img.shields.io/github/v/release/ruben-gp/helm3-unittest)](https://github.com/ruben-gp/helm3-unittest/releases) -->
 
-This is a fork of <https://github.com/lrills/helm-unittest> for Helm 3.
+This is a fork of <https://github.com/vbehar/helm3-unittest> for Helm >=3.5.0.
 
 ## Documentation
 
@@ -23,7 +23,7 @@ If you are ready for writing tests, check the [DOCUMENT](./DOCUMENT.md) for the 
 ## Install
 
 ```
-$ helm plugin install https://github.com/vbehar/helm3-unittest
+$ helm plugin install https://github.com/ruben-gp/helm3-unittest/
 ```
 
 It will install the latest version of binary into helm plugin directory.
@@ -155,14 +155,14 @@ Issues and PRs are welcome!
 Before start developing this plugin, you must have [go](https://golang.org/doc/install) and [dep](https://github.com/golang/dep#installation) installed, and run:
 
 ```
-git clone git@github.com:lrills/helm-unittest.git
+git clone https://github.com/ruben-gp/helm3-unittest/
 cd helm-unittest
-dep ensure
+go mod vendor
 ```
 
 And please make CI passed when request a PR which would check following things:
 
-- `dep status` passed. Make sure you run `dep ensure` if new dependencies added.
+- `go mod verify` passed. Make sure you run `go mod vendor` if new dependencies added.
 - `gofmt` no changes needed. Please run `gofmt -w -s` before you commit.
 - `go test ./unittest/...` passed.
 
