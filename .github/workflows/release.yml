@@ -5,16 +5,19 @@ name: release
 on:
   push:
     tags:
-      - v*
+      - '*'
+  workflow_dispatch:
 
 jobs:
   release:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         # https://github.com/actions/checkout
-      - name: Unshallow
-        run: git fetch --prune --unshallow
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Go
         # https://github.com/actions/setup-go
@@ -26,6 +29,7 @@ jobs:
         # https://github.com/goreleaser/goreleaser-action
         uses: goreleaser/goreleaser-action@v6
         with:
+          distribution: goreleaser
           version: '~> v2'
           args: release --clean
         env:

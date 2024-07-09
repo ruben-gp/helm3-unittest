@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   tag:
@@ -20,6 +21,7 @@ jobs:
       - uses: fregante/setup-git-user@v2
 
       - name: tag
+        id: tag
         uses: jenkins-x-plugins/jx-release-version@v2.7.3
         with:
           tag: true
