@@ -15,7 +15,7 @@ jobs:
         # https://github.com/actions/checkout
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
       - uses: fregante/setup-git-user@v2
 
@@ -23,4 +23,4 @@ jobs:
         uses: jenkins-x-plugins/jx-release-version@v2.7.3
         with:
           tag: true
-          github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
