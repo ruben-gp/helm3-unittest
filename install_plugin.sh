@@ -39,6 +39,8 @@ else
 fi
 
 echo "Preparing to install into ${HELM_PLUGIN_PATH}"
+
 tar xzf "releases/${version}.tar.gz" -C "${HELM_PLUGIN_PATH}"
 rm -rf "releases"
+
 echo "${PROJECT_NAME} installed into ${HELM_PLUGIN_PATH}"
