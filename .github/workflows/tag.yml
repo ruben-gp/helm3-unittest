@@ -11,15 +11,16 @@ jobs:
   tag:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        # https://github.com/actions/checkout
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN }}
       - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-      - uses: fregante/setup-git-user@v1
+      - uses: fregante/setup-git-user@v2
 
       - name: tag
-        uses: jenkins-x-plugins/jx-release-version@v2.4.13
+        uses: jenkins-x-plugins/jx-release-version@v2.7.3
         with:
           tag: true
           github-token: ${{ secrets.GH_TOKEN }}

@@ -3,7 +3,7 @@ usage: "unittest for helm 3 charts"
 description: "Unit test for helm 3 charts in YAML with ease to keep your chart functional
   and robust."
 ignoreFlags: false
-command: "$HELM_PLUGIN_DIR/bin/unittest"
+command: "$HELM_PLUGIN_DIR/helm3-unittest"
 hooks:
   install: "cd $HELM_PLUGIN_DIR; ./install_plugin.sh"
-  update: "cd $HELM_PLUGIN_DIR; ./install_plugin.sh"
+  update: "cd $HELM_PLUGIN_DIR; HELM_PLUGIN_UPDATE=1 ./install_plugin.sh"
